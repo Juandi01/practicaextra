@@ -2,7 +2,7 @@ import { renderNavbar } from './components/navbar.js'
 import { renderHome } from './pages/home.js'
 import { renderCatalog } from './pages/catalog.js'
 import { renderWhyUs } from './pages/why-us.js'
-import { renderCourse } from './pages/course.js'
+import { renderCourse, initCourse } from './pages/course.js'
 
 const app = document.getElementById('app')
 
@@ -15,6 +15,7 @@ function render(page) {
     ${page === 'course'  ? renderCourse()  : ''}
   `
   bindNav()
+  if (page === 'course') initCourse()
 }
 
 function bindNav() {
